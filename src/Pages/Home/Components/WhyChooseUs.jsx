@@ -82,7 +82,7 @@ const WhyChooseUs = () => {
                                         key={index}
                                         className="w-[280px] bg-[#0a001b] p-6 rounded-2xl"
                                     >
-                                        <h3 className="text-xl font-semibold bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 bg-clip-text text-transparent mb-3">
+                                        <h3 className="text-xl font-semibold bg-gradient-to-r from-amber-600 via-amber-300 to-amber-400 bg-clip-text text-transparent mb-3">
                                             {/* font-semibold bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 bg-clip-text text-transparent */}
                                             {/* <ShinyText text={card.title} speed={3} /> */}
                                             {card.title}
@@ -101,7 +101,7 @@ const WhyChooseUs = () => {
                                         key={index}
                                         className="w-[280px] bg-[#0a001b] p-6 rounded-2xl"
                                     >
-                                        <h3 className="text-xl font-semibold bg-gradient-to-r from-amber-400 via-amber-300 to-amber-400 bg-clip-text text-transparent mb-3">
+                                        <h3 className="text-xl font-semibold bg-gradient-to-r from-amber-600 via-amber-300 to-amber-400 bg-clip-text text-transparent mb-3">
                                             {/* <ShinyText text={card.title} speed={3} /> */}
                                             {card.title}
                                         </h3>

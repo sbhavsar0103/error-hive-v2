@@ -12,153 +12,201 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // ✅ All nav items in one array
-  const navItems = [
-    { label: "Home", href: "/" },
-    {
-      label: "Services",
-      submenu: [
-        "Python Development",
-        "AI",
-        "LLM",
-        "Web Development",
-        "Machine Learning",
-        "Data Science",
-        "Cloud Solutions",
-        "API Development",
-      ],
-    },
-    { label: "About Us", href: "/about" },
-    { label: "Contact Us", href: "/contact" },
-  ];
-
-  // Helper for toggling dropdown
-  const toggleDropdown = (label) => {
-    setOpenDropdown((prev) => (prev === label ? null : label));
+  const megaMenu = {
+    title: "Revolutionizing Industries With AI Power",
+    cta: "Book A Consultation",
+    services: [
+      "AI Consultation",
+      "Proof Of Concept",
+      "MVP",
+      "Product Development",
+    ],
+    capabilities: [
+      "LLM",
+      "Annotation",
+      "Machine Learning",
+      "Computer Vision",
+      "Web App Development",
+      "Deep Learning",
+      "Data Science",
+      "Generative AI",
+    ],
   };
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-black/80 backdrop-blur-md shadow-lg"
-          : "bg-gray-800/30 backdrop-blur-sm"
+          ? "bg-black/80 backdrop-blur-xl shadow-lg"
+          : "bg-black/40 backdrop-blur-md"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <div className="flex items-center">
-            <span className="text-2xl font-bold text-amber-500">
-              Error-Hive Solution
-            </span>
+          {/* LOGO */}
+          <div className="text-2xl font-bold text-white">
+            Error<span className="text-amber-500">Hive</span>
           </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item, index) =>
-              item.submenu ? (
-                <div
-                  key={index}
-                  className="relative group"
-                  onMouseEnter={() => setOpenDropdown(item.label)}
-                  onMouseLeave={() => setOpenDropdown(null)}
-                >
-                  <button
-                    className="text-white hover:text-amber-500 transition-colors duration-200 flex items-center"
-                  >
-                    {item.label}
-                    <ChevronDown
-                      size={16}
-                      className={`ml-1 transition-transform duration-200 ${
-                        openDropdown === item.label ? "rotate-180" : ""
-                      }`}
-                    />
-                  </button>
+          {/* DESKTOP MENU */}
+          <div className="hidden md:flex items-center space-x-10">
+            <a href="/" className="text-white hover:text-blue-400 transition">
+              Home
+            </a>
 
-                  {openDropdown === item.label && (
-                    <div className="absolute top-full left-0 mt-2 w-56 bg-black/90 backdrop-blur-md rounded-lg shadow-xl py-2 border border-amber-500/20">
-                      {item.submenu.map((sub, subIndex) => (
-                        <a
-                          key={subIndex}
-                          href="#services"
-                          className="block px-4 py-2 text-white hover:bg-amber-500/20 hover:text-amber-500 transition-colors duration-200"
-                        >
-                          {sub}
-                        </a>
-                      ))}
+            {/* MEGA MENU */}
+            <div
+              className="relative"
+              onMouseEnter={() => setOpenDropdown("services")}
+              onMouseLeave={() => setOpenDropdown(null)}
+            >
+              {/* Invisible hover buffer */}
+              <div className="absolute -inset-x-24 top-0 h-[140px]" />
+
+              <button className="relative z-10 flex items-center text-white hover:text-blue-400 transition">
+                Services
+                <ChevronDown
+                  size={16}
+                  className={`ml-1 transition-transform ${
+                    openDropdown === "services" ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {openDropdown === "services" && (
+                <div className="absolute left-1/2 mt-5 top-full pt-8 w-[1220px] -translate-x-1/2 rounded-2xl bg-neutral-900/95 backdrop-blur-xl border border-white/10 shadow-2xl p-8 z-20">
+                  <div className="grid grid-cols-12 gap-6">
+                    {/* LEFT CARD */}
+                    <div className="col-span-4 rounded-xl bg-neutral-800 p-6 flex flex-col justify-between">
+                      <h3 className="text-xl font-semibold text-white">
+                        {megaMenu.title}
+                      </h3>
+
+                      <button className="mt-6 bg-amber-600 hover:bg-amber-500 text-white rounded-lg px-5 py-3 text-sm font-medium transition">
+                        {megaMenu.cta} →
+                      </button>
                     </div>
-                  )}
+
+                    {/* SERVICES */}
+                    <div className="col-span-3">
+                      <h4 className="text-sm text-gray-400 mb-4">
+                        Services
+                      </h4>
+                      <ul className="space-y-3">
+                        {megaMenu.services.map((item, i) => (
+                          <li
+                            key={i}
+                            className="text-white hover:text-blue-400 cursor-pointer transition"
+                          >
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* VERTICAL DIVIDER */}
+                    <div className="col-span-1 flex justify-center">
+                      <span className="w-px h-full bg-gradient-to-b from-transparent via-amber-600/20 to-transparent" />
+                    </div>
+
+                    {/* CAPABILITIES */}
+                    <div className="col-span-4">
+                      <h4 className="text-sm text-gray-400 mb-4">
+                        Capabilities
+                      </h4>
+                      <ul className="grid grid-cols-2 gap-x-4 gap-y-3">
+                        {megaMenu.capabilities.map((item, i) => (
+                          <li
+                            key={i}
+                            className="text-white hover:text-blue-400 cursor-pointer transition"
+                          >
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-              ) : (
-                <a
-                  key={index}
-                  href={item.href}
-                  className="text-white hover:text-amber-500 transition-colors duration-200"
-                >
-                  {item.label}
-                </a>
-              )
-            )}
+              )}
+            </div>
+
+            <a href="/about" className="text-white hover:text-blue-400 transition">
+              About Us
+            </a>
+
+            <a
+              href="/contact"
+              className="text-white hover:text-blue-400 transition"
+            >
+              Contact
+            </a>
+
+            <button className="ml-4 bg-white text-black px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-200 transition">
+              Let’s Talk
+            </button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* MOBILE BUTTON */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-white hover:text-amber-500 transition-colors"
+              className="text-white"
             >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* MOBILE MENU */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-gray-900/95 backdrop-blur-md border-t border-amber-500/20">
-          <div className="px-4 py-4 space-y-3">
-            {navItems.map((item, index) =>
-              item.submenu ? (
-                <div key={index}>
-                  <button
-                    className="w-full text-left text-white hover:text-amber-500 transition-colors duration-200 py-2 flex items-center justify-between"
-                    onClick={() => toggleDropdown(item.label)}
-                  >
-                    {item.label}
-                    <ChevronDown
-                      size={16}
-                      className={`transition-transform duration-200 ${
-                        openDropdown === item.label ? "rotate-180" : ""
-                      }`}
-                    />
-                  </button>
-                  {openDropdown === item.label && (
-                    <div className="pl-4 space-y-2 mt-2">
-                      {item.submenu.map((sub, subIndex) => (
-                        <a
-                          key={subIndex}
-                          href="#services"
-                          className="block text-gray-300 hover:text-amber-500 transition-colors duration-200 py-1"
-                          onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                          {sub}
-                        </a>
-                      ))}
-                    </div>
+        <div className="md:hidden bg-black/95 backdrop-blur-xl border-t border-white/10">
+          <div className="px-6 py-6 space-y-4">
+            <a href="/" className="block text-white">
+              Home
+            </a>
+
+            <div>
+              <button
+                onClick={() =>
+                  setOpenDropdown(
+                    openDropdown === "mobile-services"
+                      ? null
+                      : "mobile-services"
+                  )
+                }
+                className="w-full flex justify-between items-center text-white"
+              >
+                Services
+                <ChevronDown
+                  size={16}
+                  className={`transition-transform ${
+                    openDropdown === "mobile-services" ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {openDropdown === "mobile-services" && (
+                <div className="mt-3 pl-4 space-y-2 text-gray-300">
+                  {[...megaMenu.services, ...megaMenu.capabilities].map(
+                    (item, i) => (
+                      <div key={i}>{item}</div>
+                    )
                   )}
                 </div>
-              ) : (
-                <a
-                  key={index}
-                  href={item.href}
-                  className="block text-white hover:text-amber-500 transition-colors duration-200 py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </a>
-              )
-            )}
+              )}
+            </div>
+
+            <a href="/about" className="block text-white">
+              About Us
+            </a>
+            <a href="/contact" className="block text-white">
+              Contact
+            </a>
+
+            <button className="w-full mt-4 bg-amber-600 text-white py-3 rounded-lg">
+              Let’s Talk
+            </button>
           </div>
         </div>
       )}

@@ -4,7 +4,7 @@ import BannerHero from "./Pages/Home/Home";
 import AboutUs from "./Pages/AboutUs/AboutUs";
 import ContactUs from "./Pages/ContactUs/ContactUs";
 import Navbar from "./Components/NavBar/NavBar";
-import PythonService from "./Pages/Services/PythonDev/PythonService";
+import AIConsultingHero from "./Pages/Services/AIConsulting/AIConsultingHero";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
           <Route path="/" element={<BannerHero />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<ContactUs />} />
-          <Route path="/services/python-development" element={<PythonService />} />
+          <Route path="/services/ai-consulting" element={<AIConsultingHero />} />
         </Routes>
       </div>
     </Router>
