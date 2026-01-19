@@ -19,8 +19,8 @@ export default function HeroStats() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: i * 0.2 }}
         >
-          <div className="text-3xl font-bold text-white mb-1">{value}</div>
-          <div className="text-slate-400 text-sm">{label}</div>
+          <div className="text-3xl font-bold text-amber-400 mb-1">{value}</div>
+          <div className="text-amber-200/70 text-sm">{label}</div>
         </motion.div>
       ))}
     </motion.div>

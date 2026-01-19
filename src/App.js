@@ -5,6 +5,9 @@ import AboutUs from "./Pages/AboutUs/AboutUs";
 import ContactUs from "./Pages/ContactUs/ContactUs";
 import Navbar from "./Components/NavBar/NavBar";
 import AIConsultingHero from "./Pages/Services/AIConsulting/AIConsultingHero";
+import POCServicesHero from "./Pages/Services/POCServices/POCServicesHero";
+import AIProductDevelopment from "./Pages/Services/AIProductDevelopment/AIProductDevelopmentHero";
+import LLMServiceHero from "./Pages/Services/LLMService/LLMServiceHero";
 
 function App() {
   return (
@@ -16,6 +19,9 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/services/ai-consulting" element={<AIConsultingHero />} />
+          <Route path="/services/poc-services" element={<POCServicesHero />} />
+          <Route path="/services/ai-product-development" element={<AIProductDevelopment />} />
+          <Route path="/services/llm-service" element={<LLMServiceHero />} />
         </Routes>
       </div>
     </Router>

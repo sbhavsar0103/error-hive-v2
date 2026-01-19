@@ -14,7 +14,7 @@ export default function HeroButtons() {
           transition: { staggerChildren: 0.2 },
         },
       }}
-      className="flex flex-col sm:flex-row gap-4 mt-8"
+      className="flex flex-col sm:flex-row gap-4 mt-8 justify-center items-center text-center"
     >
       <motion.button
         whileHover={{ scale: 1.08 }}
@@ -23,14 +23,6 @@ export default function HeroButtons() {
       >
         Get Started
         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-      </motion.button>
-
-      <motion.button
-        whileHover={{ scale: 1.08 }}
-        whileTap={{ scale: 0.95 }}
-        className="border-2 border-amber-500 text-amber-400 px-8 py-4 rounded-lg font-semibold hover:bg-amber-500/10"
-      >
-        View Services
       </motion.button>
     </motion.div>
   );
