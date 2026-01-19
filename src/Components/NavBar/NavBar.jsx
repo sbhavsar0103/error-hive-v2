@@ -31,15 +31,20 @@ const Navbar = () => {
       "Data Science",
       "Generative AI",
     ],
+    scrapping: [
+      "Web Data Extraction",
+      "Mobile Application Scrapping",
+      "Real Time API",
+    ],
+
   };
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-black/80 backdrop-blur-xl shadow-lg"
-          : "bg-black/40 backdrop-blur-md"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? "bg-black/80 backdrop-blur-xl shadow-lg"
+        : "bg-black/40 backdrop-blur-md"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -50,10 +55,6 @@ const Navbar = () => {
 
           {/* DESKTOP MENU */}
           <div className="hidden md:flex items-center space-x-10">
-            <a href="/" className="text-white hover:text-blue-400 transition">
-              Home
-            </a>
-
             {/* MEGA MENU */}
             <div
               className="relative"
@@ -67,9 +68,8 @@ const Navbar = () => {
                 Services
                 <ChevronDown
                   size={16}
-                  className={`ml-1 transition-transform ${
-                    openDropdown === "services" ? "rotate-180" : ""
-                  }`}
+                  className={`ml-1 transition-transform ${openDropdown === "services" ? "rotate-180" : ""
+                    }`}
                 />
               </button>
 
@@ -125,6 +125,25 @@ const Navbar = () => {
                         ))}
                       </ul>
                     </div>
+                    <div className="col-span-1 flex justify-center">
+                      <span className="w-px h-full bg-gradient-to-b from-transparent via-amber-600/20 to-transparent" />
+                    </div>
+                    {/* SCRAPPING */}
+                    <div className="col-span-3">
+                      <h4 className="text-sm text-gray-400 mb-4">
+                        Scrapping
+                      </h4>
+                      <ul className="space-y-3">
+                        {megaMenu.scrapping.map((item, i) => (
+                          <li
+                            key={i}
+                            className="text-white hover:text-blue-400 cursor-pointer transition"
+                          >
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div> 
                   </div>
                 </div>
               )}
@@ -180,9 +199,8 @@ const Navbar = () => {
                 Services
                 <ChevronDown
                   size={16}
-                  className={`transition-transform ${
-                    openDropdown === "mobile-services" ? "rotate-180" : ""
-                  }`}
+                  className={`transition-transform ${openDropdown === "mobile-services" ? "rotate-180" : ""
+                    }`}
                 />
               </button>
 

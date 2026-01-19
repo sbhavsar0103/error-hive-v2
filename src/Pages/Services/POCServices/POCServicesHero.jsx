@@ -66,6 +66,7 @@ export default function POCServicesHero() {
             <POCBusinessGrowthSection />
             <hr />
             <POCProcessSection />
+            <hr />
             <section className="bg-[#060010] flex flex-col items-center justify-center overflow-hidden">
                 <CurvedLoop marqueeText="Error - Hive Solution ✦" speed={2} curveAmount={120} direction="right" interactive={true} />
                 <MagicBento textAutoHide={true} enableStars={true} enableSpotlight={true} enableBorderGlow={true} enableTilt={false} enableMagnetism={false} clickEffect={false} spotlightRadius={250} particleCount={8} glowColor="245, 158, 11" />

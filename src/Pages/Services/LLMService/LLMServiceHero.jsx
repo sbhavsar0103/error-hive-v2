@@ -3,8 +3,6 @@ import FloatingParticles from "../LLMService/Components/FloatingParticles";
 import HeroButtons from "../LLMService/Components/HeroButtons";
 import NLPGameChanger from "../LLMService/Components/NLPGameChanger";
 import LLMServicesPage from "../LLMService/Components/LLMServicesPage";
-// import POCBusinessGrowthSection from "../POCServices/Components/POCBusinessGrowthSection";
-// import POCProcessSection from "../POCServices/Components/POCProcessSection";
 import CurvedLoop from "../../../Components/CurvedLoop/CurvedLoop";
 import MagicBento from "../../../Components/MagicBento/MagicBento";
 import { motion } from "framer-motion";
@@ -43,11 +41,7 @@ export default function LLMServiceHero() {
                 {/* Centered content */}
                 <div className="relative z-10 w-full flex justify-center px-6">
                     <div className="max-w-7xl w-full flex flex-col items-center text-center">
-
-                        <div
-                            className={`transition-all duration-1000 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                                }`}
-                        >
+                        <div className={`transition-all duration-1000 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
                             <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                                 AI-Powered Large Language Models (LLMs) <br />
                                 <span className="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent">
@@ -61,7 +55,6 @@ export default function LLMServiceHero() {
 
                             <HeroButtons />
                         </div>
-
                     </div>
                 </div>
             </motion.div>
@@ -70,10 +63,6 @@ export default function LLMServiceHero() {
             <hr />
             <LLMServicesPage />
             <hr />
-            {/* <hr />
-            <POCBusinessGrowthSection />
-            <hr />
-            <POCProcessSection /> */}
             <section className="bg-[#060010] flex flex-col items-center justify-center overflow-hidden">
                 <CurvedLoop marqueeText="Error - Hive Solution ✦" speed={2} curveAmount={120} direction="right" interactive={true} />
                 <MagicBento textAutoHide={true} enableStars={true} enableSpotlight={true} enableBorderGlow={true} enableTilt={false} enableMagnetism={false} clickEffect={false} spotlightRadius={250} particleCount={8} glowColor="245, 158, 11" />
