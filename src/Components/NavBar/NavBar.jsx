@@ -76,17 +76,6 @@ const Navbar = () => {
               {openDropdown === "services" && (
                 <div className="absolute left-1/2 mt-5 top-full pt-8 w-[1220px] -translate-x-1/2 rounded-2xl bg-neutral-900/95 backdrop-blur-xl border border-white/10 shadow-2xl p-8 z-20">
                   <div className="grid grid-cols-12 gap-6">
-                    {/* LEFT CARD */}
-                    <div className="col-span-4 rounded-xl bg-neutral-800 p-6 flex flex-col justify-between">
-                      <h3 className="text-xl font-semibold text-white">
-                        {megaMenu.title}
-                      </h3>
-
-                      <button className="mt-6 bg-amber-600 hover:bg-amber-500 text-white rounded-lg px-5 py-3 text-sm font-medium transition">
-                        {megaMenu.cta} →
-                      </button>
-                    </div>
-
                     {/* SERVICES */}
                     <div className="col-span-3">
                       <h4 className="text-sm text-gray-400 mb-4">

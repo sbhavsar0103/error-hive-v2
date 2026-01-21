@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
-import FloatingParticles from "../LLMService/Components/FloatingParticles";
-import HeroButtons from "../LLMService/Components/HeroButtons";
-import NLPGameChanger from "../LLMService/Components/NLPGameChanger";
-import LLMServicesPage from "../LLMService/Components/LLMServicesPage";
-import LLMTechSection from "../LLMService/Components/LLMTechSection";
+import FloatingParticles from "../Annotation/Components/FloatingParticles";
+import HeroButtons from "../Annotation/Components/HeroButtons";
+import GameChanger from "../Annotation/Components/GameChanger"; 
+// import NLPGameChanger from "../LLMService/Components/NLPGameChanger";
+// import LLMServicesPage from "../LLMService/Components/LLMServicesPage";
+// import LLMTechSection from "../LLMService/Components/LLMTechSection";
 import CurvedLoop from "../../../Components/CurvedLoop/CurvedLoop";
 import MagicBento from "../../../Components/MagicBento/MagicBento";
 import { motion } from "framer-motion";
 
-export default function LLMServiceHero() {
+export default function AnnotationServiceHero() {
     const [mounted, setMounted] = useState(false);
 
     const container = {
@@ -44,14 +45,11 @@ export default function LLMServiceHero() {
                     <div className="max-w-7xl w-full flex flex-col items-center text-center">
                         <div className={`transition-all duration-1000 ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
                             <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                                AI-Powered Large Language Models (LLMs) <br />
-                                <span className="bg-gradient-to-r from-amber-500 to-amber-600 bg-clip-text text-transparent">
-                                    for Smart Automation & Text Processing
-                                </span>
+                                Powering AI Accuracy with Expert Data Labeling & Intelligent Data Mining <br />
                             </h1>
 
                             <p className="text-xl text-amber-200/70 mb-8 leading-relaxed max-w-4xl mx-auto">
-                                This ensures strong keyword placement for AI, Large Language Models, Automation, and Text Processing, helping with search visibility while remaining user-friendly. 🚀
+                                AI models are only as good as the data they are trained on. Our Data Annotation & Mining solutions ensure high-quality, structured, and accurately labeled datasets for machine learning, deep learning, and AI-driven automation. From image and video annotation to text labeling and data enrichment, we help businesses build robust AI models with precision and efficiency.
                             </p>
 
                             <HeroButtons />
@@ -60,11 +58,12 @@ export default function LLMServiceHero() {
                 </div>
             </motion.div>
             <hr />
-            <NLPGameChanger />
+            <GameChanger />
+            {/* <NLPGameChanger />
             <hr />
             <LLMServicesPage />
             <hr />
-            <LLMTechSection />
+            <LLMTechSection /> */}
             <hr />
             <section className="bg-[#060010] flex flex-col items-center justify-center overflow-hidden">
                 <CurvedLoop marqueeText="Error - Hive Solution ✦" speed={2} curveAmount={120} direction="right" interactive={true} />
