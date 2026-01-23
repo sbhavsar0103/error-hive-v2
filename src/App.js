@@ -9,6 +9,8 @@ import POCServicesHero from "./Pages/Services/POCServices/POCServicesHero";
 import AIProductDevelopment from "./Pages/Services/AIProductDevelopment/AIProductDevelopmentHero";
 import LLMServiceHero from "./Pages/Services/LLMService/LLMServiceHero";
 import AnnotationServiceHero from "./Pages/Services/Annotation/AnnotationServiceHero";
+import MachineLearningHero from "./Pages/Services/MachineLearning/MachineLearningHero";
+// import DataScienceHero from "./Pages/Services/DataScience/DataScienceHero";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
           <Route path="/services/ai-product-development" element={<AIProductDevelopment />} />
           <Route path="/services/llm-service" element={<LLMServiceHero />} />
           <Route path="/services/annotation-service" element={<AnnotationServiceHero />} />
+          <Route path="/services/machine-learning" element={<MachineLearningHero />} />
+          {/* <Route path="/services/data-science" element={<DataScienceHero />} /> */}
         </Routes>
       </div>
     </Router>
