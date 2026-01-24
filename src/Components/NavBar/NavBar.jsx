@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,29 +16,29 @@ const Navbar = () => {
   const megaMenu = {
     title: "Revolutionizing Industries With AI Power",
     cta: "Book A Consultation",
+
     services: [
-      "AI Consultation",
-      "Proof Of Concept",
-      "Product Development",
-      // "MVP",
-    ],
-    capabilities: [
-      "LLM",
-      "Annotation",
-      "Machine Learning",
-      // "Computer Vision",
-      "Web App Development",
-      // "Deep Learning",
-      "Data Science",
-      "Generative AI",
-    ],
-    scrapping: [
-      "Web Data Extraction",
-      "Mobile Application Scrapping",
-      "Real Time API",
+      { label: "AI Consultation", path: "/services/ai-consulting" },
+      { label: "Proof Of Concept", path: "/services/poc-services" },
+      { label: "Product Development", path: "/services/ai-product-development" },
     ],
 
+    capabilities: [
+      { label: "LLM", path: "/services/llm-service" },
+      { label: "Annotation", path: "/services/annotation-service" },
+      { label: "Machine Learning", path: "/services/machine-learning" },
+      { label: "Web App Development", path: "/services/web-development" },
+      { label: "Data Science", path: "/services/data-science" },
+      { label: "Generative AI", path: "/services/generative-ai" },
+    ],
+
+    scrapping: [
+      { label: "Web Data Extraction", path: "/services/web-data-extraction" },
+      { label: "Mobile Application Scrapping", path: "/services/mobile-scrapping" },
+      { label: "Real Time API", path: "/services/real-time-api" },
+    ],
   };
+
 
   return (
     <nav
@@ -82,12 +83,14 @@ const Navbar = () => {
                         Services
                       </h4>
                       <ul className="space-y-3">
-                        {megaMenu.services.map((item, i) => (
-                          <li
-                            key={i}
-                            className="text-white hover:text-blue-400 cursor-pointer transition"
-                          >
-                            {item}
+                        {megaMenu.services.map(({ label, path }) => (
+                          <li key={label}>
+                            <Link
+                              to={path}
+                              className="text-white hover:text-blue-400 transition block"
+                            >
+                              {label}
+                            </Link>
                           </li>
                         ))}
                       </ul>
@@ -104,12 +107,14 @@ const Navbar = () => {
                         Capabilities
                       </h4>
                       <ul className="grid grid-cols-2 gap-x-4 gap-y-3">
-                        {megaMenu.capabilities.map((item, i) => (
-                          <li
-                            key={i}
-                            className="text-white hover:text-blue-400 cursor-pointer transition"
-                          >
-                            {item}
+                        {megaMenu.capabilities.map(({ label, path }) => (
+                          <li key={label}>
+                            <Link
+                              to={path}
+                              className="text-white hover:text-blue-400 transition block"
+                            >
+                              {label}
+                            </Link>
                           </li>
                         ))}
                       </ul>
@@ -123,31 +128,31 @@ const Navbar = () => {
                         Scrapping
                       </h4>
                       <ul className="space-y-3">
-                        {megaMenu.scrapping.map((item, i) => (
-                          <li
-                            key={i}
-                            className="text-white hover:text-blue-400 cursor-pointer transition"
-                          >
-                            {item}
+                        {megaMenu.scrapping.map(({ label, path }) => (
+                          <li key={label}>
+                            <Link
+                              to={path}
+                              className="text-white hover:text-blue-400 transition block"
+                            >
+                              {label}
+                            </Link>
                           </li>
                         ))}
                       </ul>
-                    </div> 
+                    </div>
                   </div>
                 </div>
               )}
             </div>
 
-            <a href="/about" className="text-white hover:text-blue-400 transition">
+            <Link to="/about" className="text-white hover:text-blue-400 transition">
               About Us
-            </a>
+            </Link>
 
-            <a
-              href="/contact"
-              className="text-white hover:text-blue-400 transition"
-            >
+            <Link to="/contact" className="text-white hover:text-blue-400 transition">
               Contact
-            </a>
+            </Link>
+
 
             <button className="ml-4 bg-white text-black px-5 py-2 rounded-full text-sm font-medium hover:bg-gray-200 transition">
               Let’s Talk
@@ -170,9 +175,9 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-black/95 backdrop-blur-xl border-t border-white/10">
           <div className="px-6 py-6 space-y-4">
-            <a href="/" className="block text-white">
+            <Link to="/" className="block text-white">
               Home
-            </a>
+            </Link>
 
             <div>
               <button
@@ -196,20 +201,28 @@ const Navbar = () => {
               {openDropdown === "mobile-services" && (
                 <div className="mt-3 pl-4 space-y-2 text-gray-300">
                   {[...megaMenu.services, ...megaMenu.capabilities].map(
-                    (item, i) => (
-                      <div key={i}>{item}</div>
+                    ({ label, path }) => (
+                      <Link
+                        key={label}
+                        to={path}
+                        className="block hover:text-white transition"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {label}
+                      </Link>
                     )
                   )}
                 </div>
               )}
             </div>
 
-            <a href="/about" className="block text-white">
+            <Link to="/about" className="block text-white">
               About Us
-            </a>
-            <a href="/contact" className="block text-white">
+            </Link>
+
+            <Link to="/contact" className="block text-white">
               Contact
-            </a>
+            </Link>
 
             <button className="w-full mt-4 bg-amber-600 text-white py-3 rounded-lg">
               Let’s Talk

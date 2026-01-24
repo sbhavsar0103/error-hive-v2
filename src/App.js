@@ -13,6 +13,8 @@ import MachineLearningHero from "./Pages/Services/MachineLearning/MachineLearnin
 import WebDevelopmentHero from "./Pages/Services/WebDevelopment/WebDevelopmentHero";
 import DataScienceHero from "./Pages/Services/DataScience/DataScienceHero";
 import GenerativeAI from "./Pages/Services/GenerativeAI/GenerativeAIHero";
+import WebDataExtractionHero from "./Pages/Services/WebDataExtraction/WebDataExtractionHero";
+import MobileAppScrapingHero from "./Pages/Services/MobileAppScraping/MobileAppScrapingHero";
 
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
           <Route path="/services/web-development" element={<WebDevelopmentHero />} />
           <Route path="/services/data-science" element={<DataScienceHero />} />
           <Route path="/services/generative-ai" element={<GenerativeAI />} />
+          <Route path="/services/web-data-extraction" element={<WebDataExtractionHero />} />
+          <Route path="/services/mobile-scraping" element={<MobileAppScrapingHero />} />
         </Routes>
       </div>
     </Router>
